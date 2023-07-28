@@ -9,7 +9,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 
 export default function Home() {
@@ -19,14 +18,14 @@ export default function Home() {
   }>();
 
   return (
-    <main className="">
+    <main className="max-w-xl p-6 mx-auto">
       <Form {...form}>
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input placeholder="shadcn" {...field} />
               </FormControl>
@@ -38,9 +37,6 @@ export default function Home() {
           )}
         />
       </Form>
-
-      <Label htmlFor="name">Name</Label>
-      <Input id="name" name="name" />
     </main>
   );
 }
